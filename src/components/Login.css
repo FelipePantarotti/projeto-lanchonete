@@ -1,0 +1,15 @@
+.container {
+    display: flex;
+    flex-direction: column;
+    gap: 20px;
+    width: 100%;          
+    max-width: 350px;     
+    border: 2px solid #000000;  
+    border-radius: 8px;     
+    padding: 30px;      
+    text-align: center;
+    margin: 50px auto;
+}
+.container h2, a{
+    color: black;
+}
