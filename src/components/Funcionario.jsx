@@ -1,10 +1,14 @@
-function Funcionario(props) {
-    return (
-      <div className="funcionario">
-        <p><strong>Nome:</strong> {props.nome}</p>
-        <p><strong>Cargo:</strong> {props.cargo}</p>
-      </div>
-    );
-  }
-  
-  export default Funcionario;
+
+import './Funcionario.css'
+
+function Funcionario(props){
+    return(
+        <div className="func">
+            <h2>Nome: {props.func}</h2>
+            <h3>Cargo: {props.cargo}</h3>
+        </div>
+    )
+}
+
+export default Funcionario
+

@@ -1,24 +1,41 @@
-import CardProd from "./components/CardProd";
-import Funcionario from "./components/Funcionario";
 import Header from "./components/Header";
 import Login from "./components/Login";
+import CardProd from "./components/CardProd";
+import Funcionario from "./components/Funcionario";
 import Contador from "./components/Contador";
+import Calculadora from "./components/Calculadora";
 
 function App(){
-  return (
-    <>
-      <Header titulo="Sistema para lanchonete"
-      subtitulo="O melhor da região" />
 
-      <Login />
+    const lanches = [{id:1,nome:"x-salada",preco:"17.50"}]
+                    [{id:2,nome:"x-burguer",preco:"15.90"}]
+                    [{id:3,nome:"refrigerante",preco:"6.00"}]
 
-      <CardProd nome="X-Burguer" preco="15,90" />
-      <CardProd nome="X-Salada" preco="17,90" />
-      <CardProd nome="Refrigerante" preco="6,00" />
-      <Funcionario nome="João" cargo="Atendente" />
+    return(
+        <>
+            <Header titulo="Lanchonete Xpress" 
+            subtitulo="O melhor da região" />
+            <Login />
 
-      <Contador />
-    </>
-  ) 
+            <div className="lista_cards">
+                {
+                    lanches.map(lanche => (
+                        <CardProd
+                        key = {lanche.id}
+                        nome = {lanche.nome}
+                        preco = {lanche.preco}
+                        />)
+                    )
+                }
+            </div>
+
+            <Calculadora />
+
+            <Funcionario func="João" cargo="Atendente" />
+
+            <Contador />
+
+        </>
+    )
 }
 export default App
